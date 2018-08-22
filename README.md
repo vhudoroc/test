@@ -19,9 +19,13 @@ A terraform configuration which contains the following:
 AWS Setup
 • An EC2 instance of type t2.micro based on a Ubuntu image.
 • A Loadbalancer forwarding incoming requests to the EC2 instance.
-The EC2 instance needs to run an Nginx webserver serving one HTML file (just make one up and
-make the file part of your Github repo). The Nginx server is a Docker container started on the EC2
+• The EC2 instance needs to run an Nginx webserver serving one HTML file (just make one up and
+make the file part of your Github repo). 
+• The Nginx server is a Docker container started on the EC2
 instance.
-The state can be deployed by: terraform init and terraform apply.
+
+The state can be deployed by: 
+- terraform init and 
+- terraform apply.
 
 These projects require AWS permissions to create ressources. 
