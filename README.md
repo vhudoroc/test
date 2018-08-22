@@ -1,5 +1,6 @@
 # Project contains 2 folders, one for Docker and another one for Terraform. 
-- Lab folder cntains simple Docker exercise: 
+
+# Lab folder cntains simple Docker exercise: 
 Dockerfile which uses the official ruby image (https://hub.docker.com/_/ruby/) which
 contains a ruby program running in an infinite loop and doing the following:
 Program
@@ -15,13 +16,17 @@ In order to use it create Docker image from Dockerfile and start a container:
 - docker build -t test .
 - docker run -dt test
 
-- Lab-2 folder contains a Terraform exercise:
+# Lab-2 folder contains a Terraform exercise:
 A terraform configuration which contains the following:
 AWS Setup
+
 • An EC2 instance of type t2.micro based on a Ubuntu image.
+
 • A Loadbalancer forwarding incoming requests to the EC2 instance.
+
 • The EC2 instance needs to run an Nginx webserver serving one HTML file (just make one up and
 make the file part of your Github repo). 
+
 • The Nginx server is a Docker container started on the EC2
 instance.
 
