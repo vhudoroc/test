@@ -9,11 +9,10 @@ aws/r/instance.html) and “aws_key_pair” (https://www.terraform.io/docs/provi
 key_pair.html) out of it. The key needs to be used by the instance.
 4. Prints out the terraform resources.
 
-In order to use it:
-- Create Docker image from Dockerfile: 
-cd lab; 
-docker build -t test .; 
-docker run -dt test"
+In order to use it create Docker image from Dockerfile and start a container: 
+- cd lab; 
+- docker build -t test .; 
+- docker run -dt test"
 
 # Lab-2 folder contains a Terraform exercise:
 A terraform configuration which contains the following:
