@@ -1,4 +1,5 @@
-# Project contains 2 folders, one for Docker and another for Terraform. Lab folder cntains simple Docker exercise: 
+# Project contains 2 folders, one for Docker and another one for Terraform. 
+- Lab folder cntains simple Docker exercise: 
 Dockerfile which uses the official ruby image (https://hub.docker.com/_/ruby/) which
 contains a ruby program running in an infinite loop and doing the following:
 Program
@@ -14,7 +15,7 @@ In order to use it create Docker image from Dockerfile and start a container:
 - docker build -t test .
 - docker run -dt test
 
-# Lab-2 folder contains a Terraform exercise:
+- Lab-2 folder contains a Terraform exercise:
 A terraform configuration which contains the following:
 AWS Setup
 • An EC2 instance of type t2.micro based on a Ubuntu image.
