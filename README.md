@@ -10,9 +10,9 @@ key_pair.html) out of it. The key needs to be used by the instance.
 4. Prints out the terraform resources.
 
 In order to use it create Docker image from Dockerfile and start a container: 
-- cd lab; 
-- docker build -t test .; 
-- docker run -dt test"
+- cd lab
+- docker build -t test .
+- docker run -dt test
 
 # Lab-2 folder contains a Terraform exercise:
 A terraform configuration which contains the following:
