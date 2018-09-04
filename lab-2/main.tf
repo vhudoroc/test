@@ -1,38 +1,18 @@
-resource "aws_launch_configuration" "launch_config" {
-  name_prefix                 = "lab-2-LaunchConfig"
-  image_id                    = ""
-  instance_type               = "${var.instance_type}"
-  iam_instance_profile        = "${aws_iam_instance_profile.iam_profile.name}"
-  key_name                    = "${var.key_name}"
-  security_groups             = ["${aws_security_group.security_group.id}"]
-  associate_public_ip_address = "false"
-  enable_monitoring           = "false"
-  ebs_optimized               = "false"
-  user_data                   = "${var.user_data != "" ?  var.user_data : data.template_file.user_data.rendered}"
-
-  lifecycle {
-    create_before_destroy = true
-  }
+provider "aws" {
+    region = "us-east-1"
 }
 
-resource "aws_elb" "elb" {
-  name            = "lab-2-ELB"
-  subnets         = ["${data.aws_subnet_ids.private.ids}"]
-  security_groups = ["${aws_security_group.elb_sg.id}"]
+module "lab-2" {
+    source = "./module"
+    aws_region = "us-east-1"
+    instance_type = "t2.micro"
+    ami_id = "ami-759bc50a"
+    key_name = "test-key"
+    max_capacity = "2"
+    min_capacity = "1"
+    vpc_id = "xxxxxx"
+    desired_capacity = "1"
 
-  listener {
-    instance_port     = "80"
-    instance_protocol = "TCP"
-    lb_port           = "80"
-    lb_protocol       = "TCP"
-  }
-
-  health_check {
-    healthy_threshold   = 3
-    interval            = 10
-    target              = "HTTP:80/"
-    timeout             = 4
-    unhealthy_threshold = 3
-  }
 
 }
+
